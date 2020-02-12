@@ -143,6 +143,8 @@ class CameraVideoButton @JvmOverloads constructor(context: Context, attrs: Attri
     init {
         val typedArray = context.theme.obtainStyledAttributes(attrs, R.styleable.CameraVideoButton, defStyleAttr, defStyleAttr)
         recordingColor = typedArray.getColor(R.styleable.CameraVideoButton_cvb_recording_color, Color.WHITE)
+        outerCirclePaint.color = typedArray.getColor(R.styleable.CameraVideoButton_cvb_outer_circle_color, Color.WHITE)
+        innerCirclePaint.color = typedArray.getColor(R.styleable.CameraVideoButton_cvb_inner_circle_color, Color.WHITE)
         outerCircleBorderPaint.color = recordingColor
         typedArray.recycle()
     }
@@ -280,8 +282,8 @@ class CameraVideoButton @JvmOverloads constructor(context: Context, attrs: Attri
             return
         }
 
-        canvas.drawCircle(outerCircleMaxSize / 2, outerCircleMaxSize / 2, innerCircleCurrentSize / 2, innerCirclePaint)
         canvas.drawCircle(outerCircleMaxSize / 2, outerCircleMaxSize / 2, outerCircleCurrentSize / 2, outerCirclePaint)
+        canvas.drawCircle(outerCircleMaxSize / 2, outerCircleMaxSize / 2, innerCircleCurrentSize / 2, innerCirclePaint)
 
         if (isRecording) {
             canvas.drawArc(outerCircleBorderRect, -90f, calculateCurrentAngle(), false, outerCircleBorderPaint)

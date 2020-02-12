@@ -2,7 +2,9 @@
 <resources>
 
     <declare-styleable name="CameraVideoButton">
-        <attr name="cvb_recording_color" format="color"/>
+        <attr name="cvb_recording_color" format="color" />
+        <attr name="cvb_outer_circle_color" format="color" />
+        <attr name="cvb_inner_circle_color" format="color" />
     </declare-styleable>
 
 </resources>
