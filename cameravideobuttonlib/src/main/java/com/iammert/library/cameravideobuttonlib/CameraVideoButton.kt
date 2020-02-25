@@ -235,7 +235,7 @@ class CameraVideoButton @JvmOverloads constructor(context: Context, attrs: Attri
 
         if (isRecordTooShort(startRecordTime, endRecordTime, MINIMUM_VIDEO_DURATION_MILLIS)) {
             actionListener?.onDurationTooShortError()
-        } else if (isRecording) {
+        } else {
             actionListener?.onEndRecord()
         }
 
